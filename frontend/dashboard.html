@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoDelivery - Lojas Próximas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-box">
+            <h3 id="boas-vindas">Olá, Usuário</h3>
+            <p style="font-size: 13px; color: #7f8c8d; margin-bottom: 15px;">Abaixo estão as lojas ordenadas por distância de você.</p>
+            
+            <div id="error-dashboard" class="error-box hidden"></div>
+            
+            <ul id="lista-lojas" class="lojas-lista">
+                </ul>
+            
+            <button id="btn-logout" class="btn-secondary" style="margin-top: 30px;">Sair / Logout</button>
+        </div>
+
+        <div id="mapa"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

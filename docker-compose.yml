@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  
+  db:
+    image: postgis/postgis:15-3.3
+    container_name: ecommerce_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha_segura_jwt
+      POSTGRES_DB: ecommerce_geo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - ecommerce_network
+
+
+  app:
+    build: ./backend
+    container_name: ecommerce_api
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=postgres
+      - DB_PASSWORD=senha_segura_jwt
+      - DB_NAME=ecommerce_geo
+      - JWT_SECRET=seu_token_secreto_aqui
+    depends_on:
+      - db
+    networks:
+      - ecommerce_network
+
+volumes:
+  pgdata: 
+
+networks:
+  ecommerce_network: 
+    driver: bridge
