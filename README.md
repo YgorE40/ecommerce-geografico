@@ -91,4 +91,4 @@ Demonstrar a utilização de bancos de dados geográficos em uma aplicação pr�
 
 ## Autor
 
-Ygor Emanoel e equipe.
+Ygor Emanoel, Luis Guilherme, Izaque Gabriel.
